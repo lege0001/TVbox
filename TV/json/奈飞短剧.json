@@ -1,0 +1,23 @@
+{
+    "请求头": "User-Agent$MOBILE_UA",
+    "编码": "UTF-8",
+    "主页url": "https://www.naifei1.org/vodtype/dj.html",
+    "数组": "lazy lazyloaded&&module-item\">",
+    "标题": "title=\"&&\"",
+    "图片": "data-src=\"&&\"",
+    "副标题": "✨-+item-text&&<",
+    "链接": "href=\"&&\"",
+    "搜索url": "/index.php/ajax/suggest?mid=1&wd={wd}&page={pg}&limit=30",
+    "搜索模式": "1",
+    "搜索二次截取": "list\":\\[&&\\]",
+    "搜索数组": "{&&}",
+    "搜索标题": "name\":\"&&\"",
+    "搜索图片": "https+://www.niandai.org+pic\":\"&&\"",
+    "搜索副标题": "✨-+en\":\"&&\"",
+    "搜索链接": "/voddetail/+id\":&&,+.html",
+    "线路数组": "data-dropdown&&</div>",
+    "线路标题": "✨乐哥推荐✨+>&&</",
+    "简介": "🚬集多为您介绍剧情🪐+剧情介绍，&&\">",
+    "分类url": "https://www.naifei1.org/vodshow/area/{area}/class/{class}/id/{cateId}/lang/{lang}/page/{catePg}/year/{year}.html",
+    "分类": "短剧$dj#女频恋爱$npla#反转爽剧$fzsj#脑洞悬疑$ndxy#年代穿越$ndcy#古装仙侠$gzxx#现代都市$xdds"
+}
