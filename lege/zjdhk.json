@@ -1,0 +1,16 @@
+{
+    "storeHouse": [
+        {
+            "sourceName": "🔥合集|爱在指尖🔥",
+            "sourceUrl": "https://7996.kstore.space/zjdhk/zjdhk.json"
+        },
+        {
+            "sourceName": "🔥乐哥|爱在指尖🔥",
+            "sourceUrl": "https://codeberg.org/lege001/TVBOX/raw/branch/main/zjdhk.json"
+        },
+        {
+            "sourceName": "🔥爱在指尖|七日🔥",
+            "sourceUrl": "https://github.moeyy.xyz/https://raw.githubusercontent.com/lege0001/TVbox/refs/heads/main/lege/%E4%B8%83%E6%97%A5.json"
+        }
+    ]
+}
