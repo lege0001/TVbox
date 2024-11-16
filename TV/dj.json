@@ -66,16 +66,6 @@
             "ext": "./json/可爱短剧.json"
         },
         {
-            "key": "✨妙片短剧✨",
-            "name": "✨妙片短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/妙片短剧.json"
-        },
-        {
             "key": "✨丽宫短剧✨",
             "name": "✨丽宫短剧✨乐哥甄选✨",
             "type": 3,
