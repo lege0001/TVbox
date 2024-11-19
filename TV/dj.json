@@ -12,6 +12,36 @@
             "ext": "./json/555短剧.json"
         },
         {
+            "key": "✨天龙影院✨",
+            "name": "✨天龙短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/天龙短剧.json"
+        },
+        {
+            "key": "✨无敌短剧✨",
+            "name": "✨无敌短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/无敌短剧.json"
+        },
+        {
+            "key": "✨追剧网✨",
+            "name": "✨追剧短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/追剧短剧.json"
+        },
+        {
             "key": "✨一起看✨",
             "name": "✨一起看短剧✨乐哥甄选✨",
             "type": 3,
@@ -432,16 +462,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/荔枝短剧.json"
-        },
-        {
-            "key": "✨天龙影院✨",
-            "name": "✨天龙短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/天龙短剧.json"
         },
         {
             "key": "✨DJW✨",
