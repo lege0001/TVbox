@@ -12,6 +12,26 @@
             "ext": "./json/555短剧.json"
         },
         {
+            "key": "✨番茄影院✨",
+            "name": "✨番茄短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/番茄短剧.json"
+        },
+        {
+            "key": "✨唐人街影院✨",
+            "name": "✨唐人街短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/唐人街短剧.json"
+        },
+        {
             "key": "✨天龙影院✨",
             "name": "✨天龙短剧✨乐哥甄选✨",
             "type": 3,
