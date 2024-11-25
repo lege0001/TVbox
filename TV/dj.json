@@ -2,8 +2,28 @@
     "spider": "./jar/xyqxbpq.jar",
     "sites": [
         {
-            "key": "✨555短剧✨",
+            "key": "星芽短剧",
             "name": "🔥指尖的黑客🔥",
+            "type": 3,
+            "api": "https://ricolj.github.io/ziyong/mb/drpy2.min.js",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./js/星芽短剧.js"
+        },
+        {
+            "key": "✨火车太堵短剧✨",
+            "name": "✨火车短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/火车太堵短剧.json"
+        },
+        {
+            "key": "✨555短剧✨",
+            "name": "555短剧",
             "type": 3,
             "api": "csp_XBPQ",
             "searchable": 1,
@@ -134,16 +154,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/奈飞短剧.json"
-        },
-        {
-            "key": "✨火车太堵短剧✨",
-            "name": "✨火车短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/火车太堵短剧.json"
         },
         {
             "key": "✨CCTV短剧✨",
