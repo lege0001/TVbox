@@ -12,16 +12,6 @@
             "ext": "./js/星芽短剧.js"
         },
         {
-            "key": "✨火车太堵短剧✨",
-            "name": "✨火车短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/火车太堵短剧.json"
-        },
-        {
             "key": "✨555短剧✨",
             "name": "✨555短剧✨乐哥甄选✨",
             "type": 3,
@@ -1242,5 +1232,5 @@
         "cms.qdwght.com"
     ],
     "logo": "https://codeberg.org/lege001/TVBOX/raw/branch/main/lib/IMG_20241126_120015.jpg",
-    "wallpaper": "https://codeberg.org/lege001/TVBOX/raw/branch/main/lib/IMG_20241126_120015.jpg"
+    "wallpaper": "https://深色壁纸.xxooo.cf/"
 }
