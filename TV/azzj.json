@@ -14,6 +14,26 @@
             "ext": "./lib/douban.json"
         },
         {
+            "key": "✨森林影院✨",
+            "name": "✨森林影院✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json1/森林影院.json"
+        },
+        {
+            "key": "✨妙片视频✨",
+            "name": "✨妙片视频✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json1/妙片视频.json"
+        },
+        {
             "key": "✨可爱TV",
             "name": "✨可爱TV✨乐哥甄选✨",
             "type": 3,
@@ -197,16 +217,6 @@
             "filterable": 1,
             "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click()",
             "ext": "./json1/剧爷爷.json"
-        },
-        {
-            "key": "✨七味网✨",
-            "name": "✨七味网✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json1/七味网.json"
         },
         {
             "key": "✨午夜影院✨",
@@ -640,7 +650,7 @@
         },
         {
             "key": "✨毒舌✨",
-            "name": "✨毒舌✨乐哥甄选✨",
+            "name": "✨毒舌短剧✨乐哥甄选✨",
             "type": 3,
             "api": "csp_XBPQ",
             "searchable": 1,
@@ -819,14 +829,14 @@
             "ext": "./json1/5557影视.json"
         },
         {
-            "key": "✨奇优影院✨",
+            "key": "✨奇优影视✨",
             "name": "✨奇优✨乐哥甄选✨",
             "type": 3,
             "api": "csp_XBPQ",
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json1/奇优影院.json"
+            "ext": "./json1/奇优影视.json"
         },
         {
             "key": "✨第七影院✨",
@@ -2201,7 +2211,7 @@
                 "数组": "item-pic&&span></div>",
                 "标题": "title=\"&&\"",
                 "图片": " data-src=\"&&\"",
-                "副标题": "✨乐哥甄选✨+video-class&&</span>",
+                "副标题": "✨+video-class&&</",
                 "链接": "href=\"&&\"",
                 "简介": "✨指间的黑客为您介绍剧情✨+vod_content&&</span>",
                 "线路二次截取": "",
