@@ -12,6 +12,16 @@
             "ext": "./js/星芽短剧.js"
         },
         {
+            "key": "✨吾爱短剧✨",
+            "name": "✨吾爱短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/吾爱短剧.json"
+        },
+        {
             "key": "✨555短剧✨",
             "name": "✨555短剧✨乐哥甄选✨",
             "type": 3,
@@ -90,8 +100,9 @@
                 "图片": "data-original=\"&&\"",
                 "副标题": "text\">&&<",
                 "链接": "/index.php/vod/detail/id/+&&\"",
+                "线路二次截取": "tab-content\">&&module-list[替换:<span>>>乐哥✨乐哥推荐✨]",
                 "线路数组": "data-dropdown&&</div>",
-                "线路标题": "✨+<span>&&</+【共+<small>&&</+集】",
+                "线路标题": "乐哥&&</+【共+<small>&&</+集】",
                 "搜索模式": "1",
                 "搜索url": "/index.php/ajax/suggest?mid=1&wd={wd}&page={pg}&limit=30",
                 "搜索数组": "list",
