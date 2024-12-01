@@ -12,16 +12,6 @@
             "ext": "./js/星芽短剧.js"
         },
         {
-            "key": "✨吾爱短剧✨",
-            "name": "✨吾爱短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/吾爱短剧.json"
-        },
-        {
             "key": "✨555短剧✨",
             "name": "✨555短剧✨乐哥甄选✨",
             "type": 3,
@@ -80,40 +70,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/一起看短剧.json"
-        },
-        {
-            "key": "大鱼短剧",
-            "name": "✨大鱼短剧✨乐哥甄选✨",
-            "type": 3,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "api": "csp_XBPQ",
-            "ext": {
-                "请求头": "User-Agent$MOBILE_UA",
-                "编码": "UTF-8",
-                "主页url": "https://dayuya.com/index.php/vod/show/id/33.html",
-                "首页": "120",
-                "起始页": "1",
-                "数组": "/vod/detail/id/&&/div></div>",
-                "标题": "title=\"&&\"",
-                "图片": "data-original=\"&&\"",
-                "副标题": "text\">&&<",
-                "链接": "/index.php/vod/detail/id/+&&\"",
-                "线路二次截取": "tab-content\">&&module-list[替换:<span>>>乐哥✨乐哥推荐✨]",
-                "线路数组": "data-dropdown&&</div>",
-                "线路标题": "乐哥&&</+【共+<small>&&</+集】",
-                "搜索模式": "1",
-                "搜索url": "/index.php/ajax/suggest?mid=1&wd={wd}&page={pg}&limit=30",
-                "搜索数组": "list",
-                "搜索标题": "name",
-                "搜索图片": "pic",
-                "搜索副标题": "en",
-                "搜索链接": "'/index.php/vod/detail/id/'+id+'.html'",
-                "简介": "✨指间的黑客提醒您:【请不要相信视频中的广告，以免上当受骗!】",
-                "分类url": "https://dayuya.com/index.php/vod/show/id/{cateId}/page/{catePg}.html",
-                "分类": "虐恋$60#古装仙侠$41#逆袭$61#悬疑$62#神豪$63#重生$64#复仇$65#穿越$66#甜宠$67#强者$68#萌宝$69#其它$70#合集$71"
-            }
         },
         {
             "key": "✨可爱短剧✨",
