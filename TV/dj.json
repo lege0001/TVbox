@@ -12,6 +12,16 @@
             "ext": "./js/星芽短剧.js"
         },
         {
+            "key": "✨抖音短剧✨",
+            "name": "✨抖音短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/抖音短剧.json"
+        },
+        {
             "key": "✨555短剧✨",
             "name": "✨555短剧✨乐哥甄选✨",
             "type": 3,
