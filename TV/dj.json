@@ -311,16 +311,6 @@
             "ext": "./json/免费短剧.json"
         },
         {
-            "key": "✨飞飞短剧✨",
-            "name": "✨飞飞短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/飞飞短剧.json"
-        },
-        {
             "key": "✨蚂蚁影库✨",
             "name": "✨蚂蚁短剧✨乐哥甄选✨",
             "type": 3,
