@@ -2,8 +2,18 @@
     "spider": "./jar/xyqxbpq.jar",
     "sites": [
         {
+            "key": "NUU短剧",
+            "name": "✨NUU短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/NUU短剧.json"
+        },
+        {
             "key": "星芽短剧",
-            "name": "🔥指尖的黑客🔥",
+            "name": "✨星芽秒播✨乐哥甄选✨",
             "type": 3,
             "api": "https://ricolj.github.io/ziyong/mb/drpy2.min.js",
             "searchable": 1,
