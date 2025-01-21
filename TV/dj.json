@@ -10,6 +10,15 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/NUU短剧.json"
+        }, {
+            "key": "應用商店",
+            "name": "應用商店",
+            "type": 3,
+            "jar": "./lib/pg.jar",
+            "api": "csp_Market",
+            "searchable": 0,
+            "changeable": 0,
+            "ext": "./lib/market.json"
         },
         {
             "key": "星芽短剧",
@@ -20,6 +29,55 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./js/星芽短剧.js"
+        }, {
+            "key": "✨电影100影院✨",
+            "name": "✨电影100短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/电影100短剧.json"
+        },
+        {
+            "key": "✨mp4影院✨",
+            "name": "✨mp4短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/mp4短剧.json"
+        },
+        {
+            "key": "✨麦田影院✨",
+            "name": "✨麦田短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/麦田短剧.json"
+        },
+        {
+            "key": "✨火车太堵✨",
+            "name": "✨火车太堵短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/火车太堵短剧.json"
+        },
+        {
+            "key": "✨雷神影院✨",
+            "name": "✨雷神短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/雷神短剧.json"
         },
         {
             "key": "✨抖音短剧✨",
@@ -30,16 +88,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/抖音短剧.json"
-        },
-        {
-            "key": "✨555短剧✨",
-            "name": "✨555短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/555短剧.json"
         },
         {
             "key": "✨唐人街影院✨",
@@ -172,16 +220,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/米兔短剧.json"
-        },
-        {
-            "key": "✨影趣✨",
-            "name": "✨影趣短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/影趣短剧.json"
         },
         {
             "key": "✨纽约短剧✨",
@@ -728,6 +766,56 @@
                 "新片首发",
                 "UUE29"
             ]
+        },
+        {
+            "name": "CKP嗅探",
+            "type": 0,
+            "url": "https://www.ckplayer.vip/jiexi/?url="
+        },
+        {
+            "name": "JXP嗅探",
+            "type": 0,
+            "url": "https://jx.playerjy.com/?url="
+        },
+        {
+            "name": "JXY嗅探",
+            "type": 0,
+            "url": "https://jx.yparse.com/index.php?url="
+        },
+        {
+            "name": "8090G嗅探",
+            "type": 0,
+            "url": "https://www.8090g.cn/?url="
+        },
+        {
+            "name": "PouYun嗅探",
+            "type": 0,
+            "url": "https://www.pouyun.com/?url="
+        },
+        {
+            "name": "虾米嗅探",
+            "type": 0,
+            "url": "https://jx.xmflv.com/?url="
+        },
+        {
+            "name": "YeMu嗅探",
+            "type": 0,
+            "url": "https://www.yemu.xyz/?url="
+        },
+        {
+            "name": "JXTV嗅探",
+            "type": 0,
+            "url": "https://jx.m3u8.tv/jiexi/?url="
+        },
+        {
+            "name": "BDJX嗅探",
+            "type": 0,
+            "url": "https://bd.jx.cn/?url="
+        },
+        {
+            "name": "Play嗅探",
+            "type": 0,
+            "url": "https://www.playm3u8.cn/jiexi.php?url="
         },
         {
             "name": "火山嗅探",
