@@ -1,7 +1,7 @@
 {
     "作者": "乐哥/241106/",
     "站名": "NUU短剧",
-    "请求头": "User-Agent$MOBILE_UA",
+    "请求头": "User-Agent@Mozilla/5.0 (Linux；； Android 12；； PEHM00 Build/SKQ1.210216.001；； wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/131.0.6778.41 Mobile Safari/537.36",
     "编码": "UTF-8",
     "图片代理": "",
     "直接播放": "0",
@@ -9,7 +9,7 @@
     "主页url": "https://nuu.su/x/id/5.html",
     "首页": "120",
     "起始页": "1",
-    "分类url": "https://nuu.su/x/area/{area}/by/{by}/class/{class}/id/{cateId}/letter/{letter}/page/{catePg}/year/{year}.html",
+    "分类url": "https://nuu.su/x/id/{cateId}/page/{catePg}.html",
     "分类": "古装$501#现代$502#爱情$503#逆袭$504#悬疑$505#重生$506#穿越$507#萌宝$508#其他$509",
     "数组": "/v/&&</a>",
     "标题": "title=\"&&\"",
