@@ -2,57 +2,38 @@
     "spider": "./jar/xyqxbpq.jar",
     "sites": [
         {
-            "key": "應用商店",
-            "name": "應用商店",
+            "key": "✨五点短剧✨",
+            "name": "✨五点短剧✨乐哥甄选✨",
             "type": 3,
-            "jar": "./lib/pg.jar",
-            "api": "csp_Market",
-            "searchable": 0,
-            "changeable": 0,
-            "ext": "./lib/market.json"
-        },
-        {
-            "key": "星芽短剧1",
-            "name": "✨星芽短剧✨乐哥甄选✨",
-            "type": 3,
-            "jar": "./jar/spider.jar",
-            "api": "csp_AppXY",
-            "searchable": 1,
-            "quickSearch": 0,
-            "filterable": 0
-        },
-        {
-            "key": "河马短剧",
-            "name": "✨河马秒播✨乐哥甄选✨",
-            "type": 3,
-            "jar": "./jar/spider.jar",
-            "api": "csp_AppHMDJ",
-            "searchable": 1,
-            "quickSearch": 0,
-            "filterable": 0,
-            "ext": "KhY021WelCEl+6MsvwnzaPussky/EAoc9z7C4keyHaEQ+sKbXhMKd83VjTL7Ls6+m7XDIcGdziOxPv79y/h4QCvmOEJmZ1VD6dopzAVxkFzEFw=="
-        },
-        {
-            "key": "星芽短剧",
-            "name": "✨星芽js✨乐哥甄选✨",
-            "type": 3,
-            "api": "https://ricolj.github.io/ziyong/mb/drpy2.min.js",
+            "api": "csp_XBPQ",
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./js/星芽短剧.js"
-        }, {
+            "ext": "./json/五点短剧.json"
+        },
+        {
+            "key": "✨乾坤短剧✨",
+            "name": "✨乾坤短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/乾坤短剧.json"
+        },
+        {
             "key": "py_星芽短剧APP",
-            "name": "✨星芽短剧-py✨乐哥甄选✨",
+            "name": "✨py星芽短剧✨乐哥甄选✨",
             "api": "./py/星芽短剧.py",
             "filterable": 1,
             "quickSearch": 1,
             "searchable": 1,
             "type": 3
-        },{
-            "key": "py_手机短剧APP",
-            "name": "✨手机短剧✨乐哥甄选✨",
-            "api": "./py/手机短剧.py",
+        },
+        {
+            "key": "py_河马短剧APP",
+            "name": "✨py河马短剧✨乐哥甄选✨",
+            "api": "./py/河马短剧.py",
             "filterable": 1,
             "quickSearch": 1,
             "searchable": 1,
@@ -60,21 +41,149 @@
         },
         {
             "key": "py_西饭短剧APP",
-            "name": "✨稀饭短剧✨乐哥甄选✨",
+            "name": "✨py稀饭短剧✨乐哥甄选✨",
             "api": "./py/西饭短剧.py",
             "filterable": 1,
             "quickSearch": 1,
             "searchable": 1,
             "type": 3
-        }, {
-            "key": "✨播剧短剧✨",
-            "name": "✨播剧短剧✨乐哥甄选✨",
+        },
+        {
+            "key": "✨稀饭短剧✨",
+            "name": "✨xp稀饭短剧✨乐哥甄选✨",
             "type": 3,
             "api": "csp_XBPQ",
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/播剧短剧.json"
+            "ext": "./json/稀饭短剧.json"
+        },
+        {
+            "key": "✨网飞短剧✨",
+            "name": "✨网飞短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/网飞短剧.json"
+        },
+        {
+            "key": "短剧好看",
+            "name": "✨短剧好看✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "ext": {
+                "分类url": "http://duanjuhk.com/vodshow/id/{cateId}/letter/{letter}/page/{catePg}.html",
+                "分类": "精选短剧$jingxuanduanju#都市$dushi#穿越$chuanyue#古代$gudai#福利短剧$fuliduanju",
+                "简介": "✨乐哥为您介绍剧情👉请不要相信视频中的广告，以免上当受骗！+简介：&&</li>",
+                "线路二次截取": "tabs-swiper&&</div>",
+                "线路数组": "<a&&/a>",
+                "线路标题": "</i>&&<",
+                "跳转播放链接": "var player_*\"url\":\"&&\"",
+                "搜索url": "http://duanjuhk.com/vodsearch/page/{pg}/wd/{wd}.html",
+                "搜索模式": "1"
+            }
+        },
+        {
+            "key": "低端影视",
+            "name": "✨低端短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "主页url": "https://diduan3.com/show-duanju-----------/",
+                "数组": "/video/&&</a>",
+                "副标题": "module-item-note\">&&</div",
+                "链接": "/video/+&&\"",
+                "影片年代": "-----------*/\" title=\"&&\"",
+                "影片地区": "-*----------/\" title=\"&&\"",
+                "影片类型": "---*--------/\" title=\"&&\"",
+                "状态": "集数：&&</div",
+                "简介": "✨乐哥为您介绍剧情👉请不要相信视频中的广告，以免上当受骗！+module-info-introduction-content\">&&</div",
+                "线路数组": "data-dropdown&&</div[替换:value=\">>value=\"%E2%9C%A8%E4%B9%90%E5%93%A5%E6%8E%A8%E8%8D%90%E2%9C%A8]",
+                "线路标题": "urlDecode(value=\"&&\")+【共+<small>&&</+集】",
+                "播放数组": "play-list\"&&</div>",
+                "倒序": "0",
+                "播放列表": "<a&&/a>",
+                "播放标题": "<span>&&<",
+                "播放链接": "href=\"&&\"",
+                "跳转播放链接": "urlDecode(var player_*\"url\":\"&&%26)",
+                "分类url": "https://diduan3.com/show-duanju-{area}-{by}-{cateId}-{lang}-{letter}---{catePg}---{year}/",
+                "分类": "古装&虐恋&逆袭&悬疑&神豪&重生&反转&复仇&穿越&总裁&甜宠&强者&言情&爽文&女恋&闪婚&离婚&都市&脑洞&仙侠&民国&合集",
+                "分类值": "*",
+                "筛选": "1",
+                "免嗅": "1",
+                "年份": "1950-2025",
+                "年份值": "*",
+                "排序": "更新时间&最多播放&实时热门&近期热播&新片上线&最高评分",
+                "排序值": "time&hits&hits_day&hits_week&year&score"
+            }
+        },
+        {
+            "key": "✨白羊短剧✨",
+            "name": "✨白羊短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/白羊短剧.json"
+        },
+        {
+            "key": "熊猫短剧",
+            "name": "✨熊猫短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "主页url": "https://www.xtqyzz.com/screen/duanju-----------.html",
+                "二次截取": "module-items\"&&id=\"page\"[替换:module-footer>>module-item]",
+                "数组": "lazyloaded&&module-item\"",
+                "标题": "alt=\"&&\"",
+                "链接": "href=\"&&\"",
+                "副标题": "module-item-text\">&&<",
+                "简介": "✨乐哥为您介绍剧情👉请不要相信视频中的广告，以免上当受骗！+none;\">&&<span",
+                "影片类型": "slash\">&&<a href=\"/player/",
+                "线路数组": "data-dropdown&&</div[替换:<span>><span>%E2%9C%A8%E4%B9%90%E5%93%A5%E6%8E%A8%E8%8D%90%E2%9C%A8]",
+                "线路标题": "urlDecode(<span>&&</)+【共+<small>&&</+集】",
+                "搜索url": "https://www.xtqyzz.com/search/{wd}----------{pg}---.html",
+                "分类url": "https://www.xtqyzz.com/screen/duanju-{area}-{by}-{cateId}-{lang}-{letter}---{catePg}---{year}.html",
+                "分类": "都市&赘婿&战神&古代言情&现代言情&历史&脑洞&玄幻&搞笑&网剧&喜剧&萌宝&神豪&超能&甜宠&复仇&神医&亲情&重生&穿越&年代&悬疑&虐恋&古装&逆袭",
+                "分类值": "*",
+                "免嗅": "1",
+                "跳转播放链接": "urlDecode(Base64(var player_*url\":\"&&\"))",
+                "筛选": "1",
+                "剧情": "",
+                "年份": "1950-2025",
+                "年份值": "*"
+            }
+        },
+        {
+            "key": "✨八戒短剧✨",
+            "name": "✨八戒短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/八戒短剧.json"
+        },
+        {
+            "key": "✨趣映坊短剧✨",
+            "name": "✨趣映坊短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/趣映坊短剧.json"
         },
         {
             "key": "✨明星短剧✨",
@@ -127,6 +236,52 @@
             "ext": "./json/热播短剧.json"
         },
         {
+            "key": "OK短剧",
+            "name": "✨OK短剧✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "主页url": "http://okfrp.com/show/40-----------.html",
+                "数组": "lazyload\"&&</a>",
+                "标题": "title=\"&&\"",
+                "图片": "data-original=\"&&\"",
+                "副标题": "text-right\">&&</span>",
+                "链接": "href=\"&&\"",
+                "简介": "content\">&&</p>",
+                "跳转播放链接": "var player_*\"url\":\"&&\"",
+                "分类url": "http://okfrp.com/show/{cateId}-----{letter}---{catePg}---{year}.html",
+                "分类": "女频恋爱$nvpinlianai#反转爽剧$fanzhuanshuangju#脑洞悬疑$naodongxuanyi#年代穿越$niandaichuanyue#古装仙侠$guzhuangxianxia#现代都市$xiandaidushi"
+            }
+        },
+        {
+            "key": "✨影视大全1✨",
+            "name": "✨短剧大全1✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "主页url": "https://www.yingshidaquantv.com/index.php/ajax/data?mid=1&tid=36",
+                "二次截取": "list\":\\[&&\\][替换:\"vod_id>>组头\"vod_id#\"vod_year>>组尾\"vod_year]",
+                "数组": "组头&&组尾",
+                "标题": "vod_name\":\"&&\"",
+                "图片": "vod_pic\":\"&&\"",
+                "副标题": "vod_remarks\":\"&&\"",
+                "链接": "/vod/+vod_id\":&&,+.html",
+                "线路数组": "\\#ewave-playlist&&</ul>",
+                "线路标题": "✨乐哥推荐✨+>&&</",
+                "跳转播放链接": "var player_*\"url\":\"&&\"",
+                "简介": "✨乐哥为您介绍剧情👉请不要相信视频中的广告，以免上当受骗！+简介：&&</div>",
+                "分类url": "/index.php/ajax/data?mid=1&tid={cateId}&page={catePg}&limit=30",
+                "分类": "重生民国$37&穿越年代$38&现代言情$39&反转爽文$40&女恋总裁$41&闪婚离婚$42&都市脑洞$43&古装仙侠$44"
+            }
+        },
+        {
             "key": "✨HG短剧✨",
             "name": "✨HG短剧✨乐哥甄选✨",
             "type": 3,
@@ -146,16 +301,6 @@
                 "分类值": "*",
                 "简介": "👉请不要相信视频中的广告，以免上当受骗！+<p>&&</p>"
             }
-        },
-        {
-            "key": "✨苹果影院✨",
-            "name": "✨苹果短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/苹果短剧.json"
         },
         {
             "key": "✨奶茶影院✨",
@@ -188,16 +333,6 @@
             "ext": "./json/麦田短剧.json"
         },
         {
-            "key": "✨火车太堵✨",
-            "name": "✨火车太堵短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/火车太堵短剧.json"
-        },
-        {
             "key": "✨唐人街影院✨",
             "name": "✨唐人街短剧✨乐哥甄选✨",
             "type": 3,
@@ -218,16 +353,6 @@
             "ext": "./json/天龙短剧.json"
         },
         {
-            "key": "✨无敌短剧✨",
-            "name": "✨无敌短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/无敌短剧.json"
-        },
-        {
             "key": "✨追剧网✨",
             "name": "✨追剧短剧✨乐哥甄选✨",
             "type": 3,
@@ -238,6 +363,20 @@
             "ext": "./json/追剧短剧.json"
         },
         {
+            "key": "追剧影院1",
+            "name": "✨追剧短剧1✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "ext": "./json/追剧短剧1.json"
+        },
+        {
+            "key": "追剧网1",
+            "name": "✨追剧短剧2✨乐哥甄选✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "ext": "./json/追剧短剧2.json"
+        },
+        {
             "key": "✨一起看✨",
             "name": "✨一起看短剧✨乐哥甄选✨",
             "type": 3,
@@ -246,16 +385,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/一起看短剧.json"
-        },
-        {
-            "key": "✨CCTV短剧✨",
-            "name": "✨CCTV短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/cctv短剧.json"
         },
         {
             "key": "✨七味短剧✨",
@@ -279,26 +408,6 @@
             "ext": "./json/优短剧.json"
         },
         {
-            "key": "✨111影视✨",
-            "name": "✨111短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/111短剧.json"
-        },
-        {
-            "key": "✨纽约短剧✨",
-            "name": "✨纽约短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/纽约短剧.json"
-        },
-        {
             "key": "✨量子影视✨",
             "name": "✨量子短剧✨乐哥甄选✨",
             "type": 3,
@@ -307,17 +416,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/量子短剧.json"
-        },
-        {
-            "key": "映迷影视",
-            "name": "✨映迷短剧✨乐哥甄选✨",
-            "type": 3,
-            "jar": "./jar/sjc.jar",
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/映迷短剧.json"
         },
         {
             "key": "护航短剧",
@@ -346,16 +444,6 @@
             }
         },
         {
-            "key": "✨稀饭短剧✨",
-            "name": "✨稀饭短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/稀饭短剧.json"
-        },
-        {
             "key": "✨安迪短剧✨",
             "name": "✨安迪短剧✨乐哥甄选✨",
             "type": 3,
@@ -376,26 +464,6 @@
             "ext": "./json/PTT短剧.json"
         },
         {
-            "key": "✨理理短剧✨",
-            "name": "✨理理短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/理理短剧.json"
-        },
-        {
-            "key": "✨白嫖者联盟✨",
-            "name": "✨白嫖短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/白嫖者.json"
-        },
-        {
             "key": "✨老王影院✨",
             "name": "✨老王短剧✨乐哥甄选✨",
             "type": 3,
@@ -404,36 +472,6 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "./json/老王短剧.json"
-        },
-        {
-            "key": "✨胖虎影院✨",
-            "name": "✨胖虎短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/胖虎短剧.json"
-        },
-        {
-            "key": "✨奇优影院✨",
-            "name": "✨奇优短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/奇优短剧.json"
-        },
-        {
-            "key": "✨大熊短剧✨",
-            "name": "✨大熊短剧✨乐哥甄选✨",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/大熊短剧.json"
         },
         {
             "key": "✨毒舌短剧✨",
@@ -456,24 +494,24 @@
             "ext": "./json/微云短剧.json"
         },
         {
-            "key": "✨一个短剧✨",
-            "name": "✨一个短剧✨乐哥甄选✨",
+            "key": "闪闪音乐网",
+            "name": "🎵闪闪音乐网",
             "type": 3,
             "api": "csp_XBPQ",
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/一个短剧.json"
+            "ext": "./json/闪闪音乐网.json"
         },
         {
-            "key": "✨短剧大全✨",
-            "name": "✨短剧大全✨乐哥甄选✨",
+            "key": "應用商店",
+            "name": "关注公众号【乐哥影视】",
             "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/短剧大全.json"
+            "jar": "./lib/pg.jar",
+            "api": "csp_Market",
+            "searchable": 0,
+            "changeable": 0,
+            "ext": "./lib/market.json"
         }
     ],
     "lives": [
@@ -859,7 +897,8 @@
             ]
         }
     ],
-    "parses": [{
+    "parses": [
+        {
             "name": "岁岁svip",
             "type": 1,
             "url": "http://8.129.30.117:8117/suisui.php?key=520&url="
@@ -914,7 +953,6 @@
             "type": 1,
             "url": "http://pan.qiaoji8.com/tvbox/neibu.php?url="
         },
-       
         {
             "name": "Web聚合",
             "type": 3,
@@ -1197,6 +1235,6 @@
         "cdnjs.hnfenxun.com",
         "cms.qdwght.com"
     ],
-    "logo": "https://电.影.top/lgcm/logo.gif",
+    "logo": "https://d.kstore.dev/download/7996/logo/logo.gif",
     "wallpaper": "https://深色壁纸.xxooo.cf/"
 }
