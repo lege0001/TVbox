@@ -3,7 +3,7 @@
 
 """
 
-作者 丢丢喵 🚓 内容均从互联网收集而来 仅供交流学习使用 版权归原创者所有 如侵犯了您的权益 请通知作者 将及时删除侵权内容
+作者 丢丢喵推荐 🚓 内容均从互联网收集而来 仅供交流学习使用 版权归原创者所有 如侵犯了您的权益 请通知作者 将及时删除侵权内容
                     ====================Diudiumiao====================
 
 """
@@ -42,7 +42,6 @@ pm = ''
 class Spider(Spider):
     global xurl
     global headerx
-    global headers
 
     def getName(self):
         return "首页"
@@ -118,15 +117,29 @@ class Spider(Spider):
                 return jg
 
     def homeContent(self, filter):
-        result = {}
-        result = {"class": [{"type_id": "%E9%83%BD%E5%B8%82", "type_name": "都市"},
-                            {"type_id": "%E9%9D%92%E6%98%A5", "type_name": "青春"},
-                            {"type_id": "%E7%8E%B0%E4%BB%A3", "type_name": "现代"},
-                            {"type_id": "%E8%B1%AA%E9%97%A8", "type_name": "豪门"},
-                            {"type_id": "%E9%80%86%E8%A2%AD", "type_name": "逆袭"},
-                            {"type_id": "%E7%A9%BF%E8%B6%8A", "type_name": "穿越"},
-                            {"type_id": "%E6%89%93%E8%84%B8%E8%99%90%E6%B8%A3", "type_name": "打脸"}],
-                 }
+        result = {"class": []}
+
+        url = f'{xurl}/xifan/drama/portalPage?reqType=duanjuCategory&version=2001001&androidVersionCode=28'
+        detail = requests.get(url=url, headers=headerx)
+        detail.encoding = "utf-8"
+        if detail.status_code == 200:
+            data = detail.json()
+            data = data['result']['elements'][0]['contents']
+
+            for vod in data:
+
+                categoryItemVo = vod.get('categoryItemVo', {})
+                subCategories = categoryItemVo.get('subCategories', None)
+                if subCategories:
+                    continue
+
+                oppoCategory = vod['categoryItemVo']['oppoCategory']
+
+                categoryId = vod['categoryItemVo']['categoryId']
+
+                type_id = str(oppoCategory) + '@' + str(categoryId)
+
+                result["class"].append({"type_id": type_id, "type_name": "集多🌠" + oppoCategory})
 
         return result
 
@@ -134,105 +147,72 @@ class Spider(Spider):
         videos = []
         current_timestamp = int(datetime.datetime.now().timestamp())
 
-        try:
-            url = xurl + f"/xifan/drama/portalPage?reqType=aggregationPage&offset=0&quickEngineVersion=-1&scene=&categoryNames=&categoryVersion=&density=1.5&pageID=page_theater&version=2001001&androidVersionCode=28&requestId={current_timestamp}d4aa487d53e646c2&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY0NjA2MiIsInVuIjoiT1BHXzYzZTYyMTdhZGJhMDQ4NGI5OWNmYTdkOWMyNmU2NTIwIiwiZnQiOiIxNzQwNjQ2MDYyIn19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjMzODY1NTEzMDAzNzYyNjg4LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjQ2MDYyLCJ1bm0iOiJPUEdfNjNlNjIxN2FkYmEwNDg0Yjk5Y2ZhN2Q5YzI2ZTY1MjAiLCJpZCI6Ijg4MmM2M2U3ZDRhYTQ4N2Q1M2U2NDZjMjQxMjg0NTcxIiwiZXhwIjoxNzQxMjUwODYyLCJkYyI6ImJqaHQifQ.zWhF-1Y92_NwuTzUQ_5dNoJwJN8g6UbMfVuH2QrSjjQ"
-            response = requests.get(url=url, headers=headerx)
-            if response.status_code == 200:
-                response_data = response.json()
-                js = response_data['result']['elements']
+        url = f"{xurl}/xifan/drama/portalPage?reqType=aggregationPage&offset=0&quickEngineVersion=-1&scene=&categoryNames=&categoryVersion=&density=1.5&pageID=page_theater&version=2001001&androidVersionCode=28&requestId={current_timestamp}d4aa487d53e646c2&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY0NjA2MiIsInVuIjoiT1BHXzYzZTYyMTdhZGJhMDQ4NGI5OWNmYTdkOWMyNmU2NTIwIiwiZnQiOiIxNzQwNjQ2MDYyIn19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjMzODY1NTEzMDAzNzYyNjg4LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjQ2MDYyLCJ1bm0iOiJPUEdfNjNlNjIxN2FkYmEwNDg0Yjk5Y2ZhN2Q5YzI2ZTY1MjAiLCJpZCI6Ijg4MmM2M2U3ZDRhYTQ4N2Q1M2U2NDZjMjQxMjg0NTcxIiwiZXhwIjoxNzQxMjUwODYyLCJkYyI6ImJqaHQifQ.zWhF-1Y92_NwuTzUQ_5dNoJwJN8g6UbMfVuH2QrSjjQ"
+        response = requests.get(url=url, headers=headerx)
+        if response.status_code == 200:
+            response_data = response.json()
+            js = response_data['result']['elements']
 
-                for soups in js:
-                    for vod in soups['contents']:
+            for soups in js:
+                for vod in soups['contents']:
 
-                        name = vod['duanjuVo']['title']
+                    name = vod['duanjuVo']['title']
 
-                        id = vod['duanjuVo']['duanjuId']
+                    id = vod['duanjuVo']['duanjuId']
 
-                        id1 = vod['duanjuVo']['source']
+                    id1 = vod['duanjuVo']['source']
 
-                        pic = vod['duanjuVo']['coverImageUrl']
+                    pic = vod['duanjuVo']['coverImageUrl']
 
-                        remark = "集多推荐"
+                    remark = "集多▶️推荐"
 
-                        video = {
-                            "vod_id": id + "#" + id1,
-                            "vod_name": name,
-                            "vod_remarks": remark,
-                            "vod_pic": pic
-                                }
-                        videos.append(video)
+                    video = {
+                        "vod_id": id + "#" + id1,
+                        "vod_name": name,
+                        "vod_remarks": remark,
+                        "vod_pic": pic
+                            }
+                    videos.append(video)
 
-            result = {'list': videos}
-            return result
-        except:
-            pass
+        result = {'list': videos}
+        return result
 
     def categoryContent(self, cid, pg, filter, ext):
         result = {}
         videos = []
-
+        fenge = cid.split("@")
         page_number = int(pg)
         page = (page_number - 1) * 30
 
         current_timestamp = int(datetime.datetime.now().timestamp())
 
-        try:
-            if '%E9%83%BD%E5%B8%82' in cid or '%E9%9D%92%E6%98%A5' in cid or '%E7%8E%B0%E4%BB%A3' in cid:
-                url = xurl + f"/xifan/drama/portalPage?reqType=aggregationPage&offset={page}&categoryId=68&quickEngineVersion=-1&scene=&categoryNames={cid}&categoryVersion=1&density=1.5&pageID=page_theater&version=2001001&androidVersionCode=28&requestId={current_timestamp}aa498144140ef297&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY1ODI5NCIsInVuIjoiT1BHXzFlZGQ5OTZhNjQ3ZTQ1MjU4Nzc1MTE2YzFkNzViN2QwIiwiZnQiOiIxNzQwNjU4Mjk0In19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjMzOTY4MTI2MTQ4NjQxNTM2LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjU4Mjk0LCJ1bm0iOiJPUEdfMWVkZDk5NmE2NDdlNDUyNTg3NzUxMTZjMWQ3NWI3ZDAiLCJpZCI6IjNiMzViZmYzYWE0OTgxNDQxNDBlZjI5N2JkMDY5NGNhIiwiZXhwIjoxNzQxMjYzMDk0LCJkYyI6Imd6cXkifQ.JS3QY6ER0P2cQSxAE_OGKSMIWNAMsYUZ3mJTnEpf-Rc"
-                response = requests.get(url=url, headers=headerx)
-                if response.status_code == 200:
-                    response_data = response.json()
+        url = f"{xurl}/xifan/drama/portalPage?reqType=aggregationPage&offset={page}&categoryId={fenge[1]}&quickEngineVersion=-1&scene=&categoryNames={fenge[0]}&categoryVersion=1&density=1.5&pageID=page_theater&version=2001001&androidVersionCode=28&requestId={current_timestamp}aa498144140ef297&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY1ODI5NCIsInVuIjoiT1BHXzFlZGQ5OTZhNjQ3ZTQ1MjU4Nzc1MTE2YzFkNzViN2QwIiwiZnQiOiIxNzQwNjU4Mjk0In19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjMzOTY4MTI2MTQ4NjQxNTM2LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjU4Mjk0LCJ1bm0iOiJPUEdfMWVkZDk5NmE2NDdlNDUyNTg3NzUxMTZjMWQ3NWI3ZDAiLCJpZCI6IjNiMzViZmYzYWE0OTgxNDQxNDBlZjI5N2JkMDY5NGNhIiwiZXhwIjoxNzQxMjYzMDk0LCJkYyI6Imd6cXkifQ.JS3QY6ER0P2cQSxAE_OGKSMIWNAMsYUZ3mJTnEpf-Rc"
+        response = requests.get(url=url, headers=headerx)
+        if response.status_code == 200:
+            response_data = response.json()
 
-                    js = response_data['result']['elements']
+            js = response_data['result']['elements']
 
-                    for soups in js:
-                        for vod in soups['contents']:
-                            name = vod['duanjuVo']['title']
+            for soups in js:
+                for vod in soups['contents']:
+                    name = vod['duanjuVo']['title']
 
-                            id = vod['duanjuVo']['duanjuId']
+                    id = vod['duanjuVo']['duanjuId']
 
-                            id1 = vod['duanjuVo']['source']
+                    id1 = vod['duanjuVo']['source']
 
-                            pic = vod['duanjuVo']['coverImageUrl']
+                    pic = vod['duanjuVo']['coverImageUrl']
 
-                            remark = "集多推荐"
+                    remark = "集多▶️推荐"
 
-                            video = {
-                                "vod_id": id + "#" + id1,
-                                "vod_name": name,
-                                "vod_remarks": remark,
-                                "vod_pic": pic
-                                    }
-                            videos.append(video)
-            else:
-                url = xurl + f"/xifan/drama/portalPage?reqType=aggregationPage&offset={page}&categoryId=67&quickEngineVersion=-1&scene=&categoryNames={cid}&categoryVersion=1&density=1.5&pageID=page_theater&version=2001001&androidVersionCode=28&requestId={current_timestamp}aa498144140ef297&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY1ODI5NCIsInVuIjoiT1BHXzFlZGQ5OTZhNjQ3ZTQ1MjU4Nzc1MTE2YzFkNzViN2QwIiwiZnQiOiIxNzQwNjU4Mjk0In19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjMzOTY4MTI2MTQ4NjQxNTM2LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjU4Mjk0LCJ1bm0iOiJPUEdfMWVkZDk5NmE2NDdlNDUyNTg3NzUxMTZjMWQ3NWI3ZDAiLCJpZCI6IjNiMzViZmYzYWE0OTgxNDQxNDBlZjI5N2JkMDY5NGNhIiwiZXhwIjoxNzQxMjYzMDk0LCJkYyI6Imd6cXkifQ.JS3QY6ER0P2cQSxAE_OGKSMIWNAMsYUZ3mJTnEpf-Rc"
-                response = requests.get(url=url, headers=headerx)
-                if response.status_code == 200:
-                    response_data = response.json()
+                    video = {
+                        "vod_id": id + "#" + id1,
+                        "vod_name": name,
+                        "vod_remarks": remark,
+                        "vod_pic": pic
+                            }
+                    videos.append(video)
 
-                    js = response_data['result']['elements']
-
-                    for soups in js:
-                        for vod in soups['contents']:
-                            name = vod['duanjuVo']['title']
-
-                            id = vod['duanjuVo']['duanjuId']
-
-                            id1 = vod['duanjuVo']['source']
-
-                            pic = vod['duanjuVo']['coverImageUrl']
-
-                            remark = "集多推荐"
-
-                            video = {
-                                "vod_id": id + "#" + id1,
-                                "vod_name": name,
-                                "vod_remarks": remark,
-                                "vod_pic": pic
-                                    }
-                            videos.append(video)
-        except:
-            pass
         result = {'list': videos}
         result['page'] = pg
         result['pagecount'] = 9999
@@ -241,45 +221,33 @@ class Spider(Spider):
         return result
 
     def detailContent(self, ids):
-        global pm
         did = ids[0]
         result = {}
         videos = []
-
+        xianlu = ""
         bofang = ""
         fenge = did.split("#")
 
-        url = xurl + f"/xifan/drama/getDuanjuInfo?duanjuId={fenge[0]}&source={fenge[1]}&openFrom=homescreen&type=&pageID=page_inner_flow&density=1.5&version=2001001&androidVersionCode=28&requestId=1740658944980aa498144140ef297&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY1ODI5NCIsInVuIjoiT1BHXzFlZGQ5OTZhNjQ3ZTQ1MjU4Nzc1MTE2YzFkNzViN2QwIiwiZnQiOiIxNzQwNjU4Mjk0In19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjMzOTY4MTI2MTQ4NjQxNTM2LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjU4Mjk0LCJ1bm0iOiJPUEdfMWVkZDk5NmE2NDdlNDUyNTg3NzUxMTZjMWQ3NWI3ZDAiLCJpZCI6IjNiMzViZmYzYWE0OTgxNDQxNDBlZjI5N2JkMDY5NGNhIiwiZXhwIjoxNzQxMjYzMDk0LCJkYyI6Imd6cXkifQ.JS3QY6ER0P2cQSxAE_OGKSMIWNAMsYUZ3mJTnEpf-Rc"
+        url = f"{xurl}/xifan/drama/getDuanjuInfo?duanjuId={fenge[0]}&source={fenge[1]}&openFrom=homescreen&type=&pageID=page_inner_flow&density=1.5&version=2001001&androidVersionCode=28&requestId=1740658944980aa498144140ef297&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY1ODI5NCIsInVuIjoiT1BHXzFlZGQ5OTZhNjQ3ZTQ1MjU4Nzc1MTE2YzFkNzViN2QwIiwiZnQiOiIxNzQwNjU4Mjk0In19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjMzOTY4MTI2MTQ4NjQxNTM2LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjU4Mjk0LCJ1bm0iOiJPUEdfMWVkZDk5NmE2NDdlNDUyNTg3NzUxMTZjMWQ3NWI3ZDAiLCJpZCI6IjNiMzViZmYzYWE0OTgxNDQxNDBlZjI5N2JkMDY5NGNhIiwiZXhwIjoxNzQxMjYzMDk0LCJkYyI6Imd6cXkifQ.JS3QY6ER0P2cQSxAE_OGKSMIWNAMsYUZ3mJTnEpf-Rc"
         response = requests.get(url=url, headers=headerx)
         if response.status_code == 200:
             response_data = response.json()
 
-        url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732707176882/jiduo.txt'
-        response = requests.get(url)
-        response.encoding = 'utf-8'
-        code = response.text
-        name = self.extract_middle_text(code, "s1='", "'", 0)
-        Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+            content = '集多为您介绍剧情📢' + response_data.get('result', {}).get('desc', '未知')
 
-        content = '😸集多🎉为您介绍剧情📢' + response_data['result']['qualification']
-
-        if name not in content:
-            bofang = Jumps
-            xianlu = '1'
-        else:
             soup = response_data['result']['episodeList']
             for sou in soup:
 
-                name = sou['title']
+                name = sou['index']
 
                 id = sou['playUrl']
 
-                bofang = bofang + name + '$' + id + '#'
+                bofang = bofang + str(name) + '$' + str(id) + '#'
 
             bofang = bofang[:-1] + '$$$'
 
         bofang = bofang[:-3]
-        xianlu = '集多专线'
+        xianlu = '集多短剧专线'
 
         videos.append({
             "vod_id": did,
@@ -306,7 +274,7 @@ class Spider(Spider):
 
         current_timestamp = int(datetime.datetime.now().timestamp())
 
-        url = xurl + f"/xifan/search/getSearchList?keyword={key}84&pageIndex={page}&version=2001001&androidVersionCode=28&requestId={current_timestamp}ea3a14bc0317d76f&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY2ODk4NiIsInVuIjoiT1BHX2U5ODQ4NTgzZmM4ZjQzZTJhZjc5ZTcxNjRmZTE5Y2JjIiwiZnQiOiIxNzQwNjY4OTg2In19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjM0MDU3ODE4OTgxNDk5OTA0LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjY4OTg2LCJ1bm0iOiJPUEdfZTk4NDg1ODNmYzhmNDNlMmFmNzllNzE2NGZlMTljYmMiLCJpZCI6ImVhZGE1NmEyZWEzYTE0YmMwMzE3ZDc2ZmVjODJjNzc3IiwiZXhwIjoxNzQxMjczNzg2LCJkYyI6ImJqaHQifQ.IwuI0gK077RF4G10JRxgxx4GCG502vR8Z0W9EV4kd-c"
+        url = f"{xurl}/xifan/search/getSearchList?keyword={key}84&pageIndex={page}&version=2001001&androidVersionCode=28&requestId={current_timestamp}ea3a14bc0317d76f&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY2ODk4NiIsInVuIjoiT1BHX2U5ODQ4NTgzZmM4ZjQzZTJhZjc5ZTcxNjRmZTE5Y2JjIiwiZnQiOiIxNzQwNjY4OTg2In19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjM0MDU3ODE4OTgxNDk5OTA0LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjY4OTg2LCJ1bm0iOiJPUEdfZTk4NDg1ODNmYzhmNDNlMmFmNzllNzE2NGZlMTljYmMiLCJpZCI6ImVhZGE1NmEyZWEzYTE0YmMwMzE3ZDc2ZmVjODJjNzc3IiwiZXhwIjoxNzQxMjczNzg2LCJkYyI6ImJqaHQifQ.IwuI0gK077RF4G10JRxgxx4GCG502vR8Z0W9EV4kd-c"
         response = requests.get(url=url, headers=headerx)
         if response.status_code == 200:
             response_data = response.json()
@@ -315,6 +283,7 @@ class Spider(Spider):
             for soups in js:
                 for vod in soups['contents']:
                     name = vod['duanjuVo']['title']
+                    cleaned_name = re.sub(r'<tag>|</tag>', '', name)
 
                     id = vod['duanjuVo']['duanjuId']
 
@@ -322,11 +291,11 @@ class Spider(Spider):
 
                     pic = vod['duanjuVo']['coverImageUrl']
 
-                    remark = "集多推荐"
+                    remark = "集多▶️推荐"
 
                     video = {
                         "vod_id": id + "#" + id1,
-                        "vod_name": name,
+                        "vod_name": cleaned_name,
                         "vod_remarks": remark,
                         "vod_pic": pic
                             }
