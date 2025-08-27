@@ -1,0 +1,73 @@
+var rule = {
+    author: '乐哥250322',
+    title: '宝片视频',
+    类型: '影视',
+    host: 'https://ibaopian.com/',
+    hostJs: ``,
+    headers: {
+        'User-Agent': 'Mozilla/5.0',
+    },
+    编码: 'utf-8',
+    timeout: 5000,
+    homeUrl: '/',
+    url: 'https://ibaopian.com/vod/show/id/fyclass/page/fypage.html',
+
+    detailUrl: 'https://ibaopian.com/vod/detail/id/fyid.html',
+    searchUrl: '/index.php/ajax/suggest?mid=1&wd=**&page=fypage&limit=30',
+    searchable: 2,
+    quickSearch: 0,
+    filterable: 0,
+    limit: 9,
+    double: false,
+    class_name: '电影&电视剧&综艺&动漫&短剧',
+    class_url: '1&2&3&4&8',
+    推荐: '*',
+    一级: '.myui-vodbox-content;.title&&Text;img&&src;.text-overflow&&Text;a&&href',
+    搜索: 'json:list;name;pic;en;id',
+    二级: `js:
+ let html = request(input);
+VOD = {};
+ VOD.vod_id = input;
+        //定位详情页标题
+                VOD.vod_name = pdfh(html, "h1&&Text");
+                VOD.vod_pic = pd(html, ".lazyload&&data-original");
+                VOD.type_name = pdfh(html, ".tags&&.tag:eq(1)&&Text");
+                VOD.vod_remarks = pdfh(html, "body&&.item-top:eq(3)&&Text");
+                VOD.vod_year = pdfh(html, "body&&.item-top:eq(2)&&Text");
+                VOD.vod_area = pdfh(html, "");
+                VOD.vod_director = pdfh(html, ".director:eq(0)&&Text").replace("导演:", "");
+                VOD.vod_actor = pdfh(html, ".director:eq(1)&&Text").replace("主演:", "");
+                VOD.vod_content = "✨乐哥为您介绍剧情👉请不要相信视频中的广告，以免上当受骗！" + pdfh(html, ".wrapper_more_text&&Text");
+              let r_ktabs = pdfa(html,'.swiper-container&&li');
+ let ktabs = r_ktabs.map(it => ("✨乐哥推荐✨" +pdfh(it, 'a&&Text')));
+ VOD.vod_play_from = ktabs.join('$$$');
+ let klists = [];
+ //播放
+let r_plists = pdfa(html, '.tab-content&&.tab-pane');
+ r_plists.forEach((rp) => {
+     let klist = pdfa(rp, 'div').map((it) => {
+     return pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input);
+     });
+    klist = klist.join('#');
+     klists.push(klist);
+});
+ VOD.vod_play_url = klists.join('$$$')
+ `,
+    sniffer: 0,
+    isVideo: 'http((?!http).){26,}\\.(m3u8|mp4|flv|avi|mkv|wmv|mpg|mpeg|mov|ts|3gp|rm|rmvb|asf|m4a|mp3|wma)',
+    play_parse: true,
+    lazy: `js:
+let kcode = JSON.parse(request(input).match(/var player_.*?=(.*?)</)[1]);
+let kurl = kcode.url;
+if (kcode.encrypt == '1') {
+url = unescape(url)
+} else if (kcode.encrypt == '2') {
+url = unescape(base64Decode(url))
+};
+if (/\\.(m3u8|mp4)/.test(kurl)) {
+input = { jx: 0, parse: 0, url: kurl }
+} else {
+input = { jx: 0, parse: 1, url: input }
+}`,
+
+}
